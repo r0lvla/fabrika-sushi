@@ -934,6 +934,23 @@ a.contact-value:hover {
     opacity: 1;
 }
 
+/* Mobile: pinch zoom + pan */
+@media (hover: none) and (pointer: coarse) {
+    .lightbox img {
+        max-width: 95vw;
+        max-height: 80vh;
+        transform: scale(1);
+        opacity: 1;
+        transition: opacity 0.3s ease;
+        touch-action: none;
+        cursor: grab;
+    }
+
+    .lightbox img.panning {
+        cursor: grabbing;
+    }
+}
+
 .lightbox-close {
     position: absolute;
     top: 24px;

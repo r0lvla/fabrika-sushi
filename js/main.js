@@ -114,11 +114,15 @@ document.body.appendChild(lightbox);
 
 const lightboxImg = lightbox.querySelector('img');
 const lightboxClose = lightbox.querySelector('.lightbox-close');
+const isMobile = ('ontouchstart' in window) && window.matchMedia('(hover: none)').matches;
 
 function openLightbox(src, alt) {
     lightboxImg.src = src;
     lightboxImg.alt = alt;
-    // Force reflow for transition
+    lightboxImg.style.transform = '';
+    lightboxImg.style.left = '';
+    lightboxImg.style.top = '';
+    pinchState.scale = 1; pinchState.x = 0; pinchState.y = 0;
     lightbox.style.display = 'flex';
     lightbox.offsetHeight;
     requestAnimationFrame(() => {
@@ -133,26 +137,93 @@ function closeLightbox() {
     setTimeout(() => {
         lightbox.style.display = 'none';
         lightboxImg.src = '';
+        lightboxImg.style.transform = '';
+        lightboxImg.style.left = '';
+        lightboxImg.style.top = '';
+        pinchState.scale = 1; pinchState.x = 0; pinchState.y = 0;
     }, 400);
 }
 
 lightbox.addEventListener('click', (e) => {
     e.stopPropagation();
+    if (isMobile && e.target === lightboxImg) return;
     closeLightbox();
 });
 
 lightboxImg.addEventListener('click', (e) => {
     e.stopPropagation();
+    if (isMobile) return;
     closeLightbox();
 });
 lightboxClose.addEventListener('click', closeLightbox);
 
 document.querySelectorAll('.promo-card-image img').forEach(img => {
-    img.addEventListener('click', () => {
-        openLightbox(img.src, img.alt);
-    });
+    img.addEventListener('click', () => openLightbox(img.src, img.alt));
 });
 
 document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') closeLightbox();
 });
+
+// ===== MOBILE: PINCH ZOOM + PAN + DOUBLE TAP =====
+const pinchState = { scale: 1, x: 0, y: 0, startScale: 1, startDist: 0, startX: 0, startY: 0, startPanX: 0, startPanY: 0, touching: false };
+
+function getDist(t1, t2) { return Math.hypot(t1.clientX - t2.clientX, t1.clientY - t2.clientY); }
+function getCenter(t1, t2) { return { x: (t1.clientX + t2.clientX) / 2, y: (t1.clientY + t2.clientY) / 2 }; }
+function updateImgTransform() { lightboxImg.style.transform = 'translate(' + pinchState.x + 'px,' + pinchState.y + 'px) scale(' + pinchState.scale + ')'; }
+function resetIfSmall() { if (pinchState.scale <= 1) { pinchState.scale = 1; pinchState.x = 0; pinchState.y = 0; updateImgTransform(); } }
+
+lightboxImg.addEventListener('touchstart', (e) => {
+    if (e.touches.length === 1) {
+        pinchState.touching = true;
+        pinchState.startX = e.touches[0].clientX;
+        pinchState.startY = e.touches[0].clientY;
+        pinchState.startPanX = pinchState.x;
+        pinchState.startPanY = pinchState.y;
+    } else if (e.touches.length === 2) {
+        pinchState.startDist = getDist(e.touches[0], e.touches[1]);
+        pinchState.startScale = pinchState.scale;
+        var c = getCenter(e.touches[0], e.touches[1]);
+        pinchState.startX = c.x; pinchState.startY = c.y;
+    }
+}, { passive: true });
+
+lightboxImg.addEventListener('touchmove', (e) => {
+    e.preventDefault();
+    if (e.touches.length === 1 && pinchState.touching) {
+        var dx = e.touches[0].clientX - pinchState.startX;
+        var dy = e.touches[0].clientY - pinchState.startY;
+        pinchState.x = pinchState.startPanX + dx;
+        pinchState.y = pinchState.startPanY + dy;
+        updateImgTransform();
+    } else if (e.touches.length === 2) {
+        var dist = getDist(e.touches[0], e.touches[1]);
+        var c = getCenter(e.touches[0], e.touches[1]);
+        pinchState.scale = Math.max(1, Math.min(5, pinchState.startScale * (dist / pinchState.startDist)));
+        pinchState.x = c.x - pinchState.startX;
+        pinchState.y = c.y - pinchState.startY;
+        updateImgTransform();
+    }
+}, { passive: false });
+
+lightboxImg.addEventListener('touchend', (e) => {
+    if (e.touches.length === 0) {
+        pinchState.touching = false;
+        resetIfSmall();
+    }
+}, { passive: true });
+
+// Double tap zoom toggle
+var lastTap = 0;
+lightboxImg.addEventListener('touchend', (e) => {
+    var now = Date.now();
+    if (now - lastTap < 300) {
+        if (pinchState.scale > 1) {
+            pinchState.scale = 1; pinchState.x = 0; pinchState.y = 0;
+        } else {
+            pinchState.scale = 3;
+        }
+        updateImgTransform();
+    }
+    lastTap = now;
+}, { passive: true });
