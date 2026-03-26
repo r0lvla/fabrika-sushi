@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FABRIKA SUSHI — Японская кухня в Мурино и Приморском районе</title>
+    <meta name="description" content="Fabrika Sushi — суши-гастроном в Мурино и Приморском районе Санкт-Петербурга. Свежие роллы, наборы на любой вкус, доставка.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- ===== NAVIGATION ===== -->
+    <nav class="nav" id="nav">
+        <div class="nav-container">
+            <a href="#" class="nav-logo">
+                <img src="img/logo/logo.jpg" alt="Fabrika Sushi" class="nav-logo-img">
+            </a>
+            <button class="nav-toggle" id="navToggle" aria-label="Menu">
+                <span></span><span></span><span></span>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#promo" class="nav-link">Зомби-сезон</a></li>
+                <li><a href="#assortment" class="nav-link">Ассортимент</a></li>
+                <li><a href="#sets" class="nav-link">Наборы</a></li>
+                <li><a href="#restaurants" class="nav-link">Рестораны</a></li>
+                <li><a href="#contacts" class="nav-link">Контакты</a></li>
+            </ul>
+            <a href="tel:+78123898888" class="nav-phone">389-88-88</a>
+        </div>
+    </nav>
+
+    <!-- ===== HERO — ЛОГО КРУПНО ===== -->
+    <header class="hero" id="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <img src="img/logo/logo.jpg" alt="FABRIKA SUSHI" class="hero-logo">
+            <div class="hero-tagline">Фабрика вкуса. Фабрика качества. Фабрика суши.</div>
+            <p class="hero-sub">Японская кухня | Мурино &bull; Приморский район</p>
+            <div class="hero-buttons">
+                <a href="#promo" class="btn btn-primary">Увидеть зомби-меню 🧟</a>
+                <a href="tel:+78123898888" class="btn btn-outline">Заказать ☎ 389-88-88</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- ===== ПРОМО — ЗОМБИЧЕСКОЕ ОБОСТРЕНИЕ ===== -->
+    <section class="promo" id="promo">
+        <div class="container">
+            <div class="promo-badge">🧟 СЕЗОННАЯ АКЦИЯ</div>
+            <h2 class="promo-title">
+                <span class="promo-title-zombie">ВЕСЕННЕЕ ЗОМБИЧЕСКОЕ ОБОСТРЕНИЕ!</span>
+            </h2>
+            <p class="promo-subtitle">Три эксклюзивных набора, которых вы не найдёте больше нигде. Только до конца сезона!</p>
+            
+            <div class="promo-grid">
+                <!-- PROMO 1 -->
+                <div class="promo-card">
+                    <div class="promo-card-image">
+                        <img src="img/zombie/zombie_brains.png" alt="Набор Мозговой штурм" loading="lazy">
+                    </div>
+                    <div class="promo-card-info">
+                        <h3>Набор «Мозговой штурм»</h3>
+                        <p>8 уникальных роллов с мозгообразными топингами из натуральных продуктов — яркие, аппетитные, незабываемые</p>
+                        <span class="promo-tag">🔥 Новинка сезона</span>
+                    </div>
+                </div>
+                <!-- PROMO 2 -->
+                <div class="promo-card">
+                    <div class="promo-card-image">
+                        <img src="img/zombie/zombie_neon.png" alt="Набор Зомби-роллы" loading="lazy">
+                    </div>
+                    <div class="promo-card-info">
+                        <h3>Набор «Неоновый укус»</h3>
+                        <p>Роллы с биолюминесцентными акцентами и экстремально яркой подачей — фотореалистичные, натуральные, impossible</p>
+                        <span class="promo-tag">🔥 Новинка сезона</span>
+                    </div>
+                </div>
+                <!-- PROMO 3 — PLACEHOLDER for Рука вампирши -->
+                <div class="promo-card">
+                    <div class="promo-card-placeholder" data-slot="3">
+                        <div class="promo-placeholder-inner">
+                            <span class="promo-emoji">🧛‍♀️</span>
+                            <span class="promo-label">Скоро</span>
+                        </div>
+                    </div>
+                    <div class="promo-card-info">
+                        <h3>Набор «Рука вампирши»</h3>
+                        <p>Запечённые роллы в форме отрубленной руки — креветки как фаланги, sriracha как лак для ногтей, брусника как плоть</p>
+                        <span class="promo-tag">⚡ Скоро в меню</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="promo-bg-glow glow-green"></div>
+        <div class="promo-bg-glow glow-purple"></div>
+    </section>
+
+    <!-- ===== ПЕРЕХОД К АССОРТИМЕНТУ ===== -->
+    <section class="transition-section">
+        <div class="container">
+            <h2 class="transition-title">НО МЫ ДЕРЖИМСЯ И ПРЕДЛАГАЕМ НАШИ ЛУЧШИЕ ХИТЫ, КАК И РАНЬШЕ!</h2>
+        </div>
+    </section>
+
+    <!-- ===== АССОРТИМЕНТ — СТУДИЙНЫЕ ФОТО ===== -->
+    <section class="assortment" id="assortment">
+        <div class="container">
+            <h2 class="section-title">НАШ АССОРТИМЕНТ</h2>
+            <p class="section-subtitle">Готовим на открытой кухне. Используем охлаждённый лосось с Фарерских островов. Выбираем лучших поваров Санкт-Петербурга.</p>
+            
+            <div class="gallery-grid studio-grid">
+                <!-- Row 1: Large LEFT -->
+                <div class="gallery-item gallery-item-large">
+                    <img src="img/studio/Свежие%20роллы.jpg" alt="Свежие роллы" loading="lazy">
+                    <div class="gallery-overlay"><span>Свежие роллы</span></div>
+                </div>
+                <div class="gallery-item">
+                    <img src="img/studio/photo_0093.jpg" alt="Роллы" loading="lazy">
+                    <div class="gallery-overlay"><span>Роллы</span></div>
+                </div>
+                <div class="gallery-item">
+                    <img src="img/studio/Суши%20и%20роллы.jpg" alt="Суши и роллы" loading="lazy">
+                    <div class="gallery-overlay"><span>Суши и роллы</span></div>
+                </div>
+                <div class="gallery-item">
+                    <img src="img/studio/photo_0094.jpg" alt="Ассортимент" loading="lazy">
+                    <div class="gallery-overlay"><span>Ассортимент</span></div>
+                </div>
+                <div class="gallery-item">
+                    <img src="img/studio/Горячие%20наборы.jpg" alt="Горячие наборы" loading="lazy">
+                    <div class="gallery-overlay"><span>Горячие наборы</span></div>
+                </div>
+
+                <!-- Row 2: Small + Large RIGHT -->
+                <div class="gallery-item">
+                    <img src="img/studio/photo_0095.jpg" alt="Наборы" loading="lazy">
+                    <div class="gallery-overlay"><span>Наборы</span></div>
+                </div>
+                <div class="gallery-item">
+                    <img src="img/studio/photo_0096.jpg" alt="Фирменные" loading="lazy">
+                    <div class="gallery-overlay"><span>Фирменные</span></div>
+                </div>
+                <div class="gallery-item gallery-item-large">
+                    <img src="img/studio/Набор%20для%20компании.jpg" alt="Набор для компании" loading="lazy">
+                    <div class="gallery-overlay"><span>Набор для компании</span></div>
+                </div>
+
+                <!-- Row 3: Large LEFT -->
+                <div class="gallery-item gallery-item-large">
+                    <img src="img/studio/VIP%20набор.jpg" alt="VIP набор" loading="lazy">
+                    <div class="gallery-overlay"><span>VIP набор</span></div>
+                </div>
+                <div class="gallery-item">
+                    <img src="img/studio/photo_0097.jpg" alt="Горячие" loading="lazy">
+                    <div class="gallery-overlay"><span>Горячие</span></div>
+                </div>
+                <div class="gallery-item">
+                    <img src="img/studio/photo_0098.jpg" alt="Сеты" loading="lazy">
+                    <div class="gallery-overlay"><span>Сеты</span></div>
+                </div>
+                <div class="gallery-item">
+                    <img src="img/studio/Сеты%20на%20заказ.jpg" alt="Сеты на заказ" loading="lazy">
+                    <div class="gallery-overlay"><span>Сеты на заказ</span></div>
+                </div>
+                <div class="gallery-item">
+                    <img src="img/studio/photo_0099.jpg" alt="Роллы на вынос" loading="lazy">
+                    <div class="gallery-overlay"><span>Роллы на вынос</span></div>
+                </div>
+
+                <!-- Row 4: Small + Large RIGHT -->
+                <div class="gallery-item">
+                    <img src="img/studio/photo_0102.jpg" alt="Корпоративный" loading="lazy">
+                    <div class="gallery-overlay"><span>Корпоративный</span></div>
+                </div>
+                <div class="gallery-item">
+                    <img src="img/studio/photo_0135.jpg" alt="Премиум" loading="lazy">
+                    <div class="gallery-overlay"><span>Премиум</span></div>
+                </div>
+                <div class="gallery-item gallery-item-large">
+                    <img src="img/studio/photo_0173.jpg" alt="Оформление" loading="lazy">
+                    <div class="gallery-overlay"><span>Оформление</span></div>
+                </div>
+
+                <!-- Row 5: Large LEFT -->
+                <div class="gallery-item gallery-item-large">
+                    <img src="img/studio/photo_0181.jpg" alt="Доставка" loading="lazy">
+                    <div class="gallery-overlay"><span>Доставка</span></div>
+                </div>
+                <div class="gallery-item">
+                    <img src="img/studio/photo_0136.jpg" alt="Доставка" loading="lazy">
+                    <div class="gallery-overlay"><span>Доставка</span></div>
+                </div>
+                <div class="gallery-item">
+                    <img src="img/studio/photo_0174.jpg" alt="Упаковка" loading="lazy">
+                    <div class="gallery-overlay"><span>Упаковка</span></div>
+                </div>
+                <div class="gallery-item">
+                    <img src="img/studio/photo_0182.jpg" alt="Роллы" loading="lazy">
+                    <div class="gallery-overlay"><span>Роллы</span></div>
+                </div>
+                <div class="gallery-item">
+                    <img src="img/studio/photo_0183.jpg" alt="Набор" loading="lazy">
+                    <div class="gallery-overlay"><span>Набор</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== НАШИ РЕСТОРАНЫ ===== -->
+    <section class="restaurants" id="restaurants">
+        <div class="container">
+            <h2 class="section-title">НАШИ РЕСТОРАНЫ</h2>
+            <p class="section-subtitle">Уютные залы, открытая кухня и лучшие повара — всё для вашего удовольствия</p>
+            
+            <div class="locations">
+                <div class="location-card">
+                    <div class="location-gallery">
+                        <img src="img/restaurant/Воронцовский%20бульвар%2012.jpg" alt="Ресторан Мурино" loading="lazy" class="location-main-img">
+                    </div>
+                    <div class="location-info">
+                        <h3>📍 МУРИНО</h3>
+                        <p class="location-address">Воронцовский бульвар, д. 12</p>
+                        <p class="location-address">ЖК Гринландия</p>
+                        <div class="location-features">
+                            <span class="feature">🍽 Зал</span>
+                            <span class="feature">📦 Доставка</span>
+                            <span class="feature">👨‍🍳 Открытая кухня</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="location-card">
+                    <div class="location-gallery">
+                        <img src="img/restaurant/Авиаконструкторов%2063.jpg" alt="Ресторан Приморский" loading="lazy" class="location-main-img">
+                    </div>
+                    <div class="location-info">
+                        <h3>📍 ПРИМОРСКИЙ РАЙОН</h3>
+                        <p class="location-address">пр. Авиаконструкторов, д. 63</p>
+                        <div class="location-features">
+                            <span class="feature">🍽 Зал</span>
+                            <span class="feature">📦 Доставка</span>
+                            <span class="feature">👨‍🍳 Открытая кухня</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="gallery-grid restaurant-gallery">
+                <div class="gallery-item"><img src="img/restaurant/Воронцовский%20бульвар%2012.jpg" alt="Мурино" loading="lazy"><div class="gallery-overlay"><span>Мурино</span></div></div>
+                <div class="gallery-item"><img src="img/restaurant/Авиаконструкторов%2063.jpg" alt="Приморский" loading="lazy"><div class="gallery-overlay"><span>Приморский</span></div></div>
+                <div class="gallery-item"><img src="img/restaurant/photo_0008.jpg" alt="Интерьер" loading="lazy"><div class="gallery-overlay"><span>Интерьер</span></div></div>
+                <div class="gallery-item"><img src="img/restaurant/photo_0009.jpg" alt="Зал" loading="lazy"><div class="gallery-overlay"><span>Зал</span></div></div>
+                <div class="gallery-item"><img src="img/restaurant/photo_0010.jpg" alt="Открытая кухня" loading="lazy"><div class="gallery-overlay"><span>Открытая кухня</span></div></div>
+                <div class="gallery-item"><img src="img/restaurant/photo_0011.jpg" alt="Атмосфера" loading="lazy"><div class="gallery-overlay"><span>Атмосфера</span></div></div>
+                <div class="gallery-item"><img src="img/restaurant/photo_0137.jpg" alt="Витрина" loading="lazy"><div class="gallery-overlay"><span>Витрина</span></div></div>
+                <div class="gallery-item"><img src="img/restaurant/photo_0172.jpg" alt="Упаковка" loading="lazy"><div class="gallery-overlay"><span>Упаковка</span></div></div>
+                <div class="gallery-item"><img src="img/restaurant/photo_0175.jpg" alt="Доставка" loading="lazy"><div class="gallery-overlay"><span>Доставка</span></div></div>
+                <div class="gallery-item"><img src="img/restaurant/photo_0186.jpg" alt="Фасад" loading="lazy"><div class="gallery-overlay"><span>Фасад</span></div></div>
+                <div class="gallery-item"><img src="img/restaurant/photo_0187.jpg" alt="Детали" loading="lazy"><div class="gallery-overlay"><span>Детали</span></div></div>
+                <div class="gallery-item"><img src="img/restaurant/photo_0188.jpg" alt="Приборы" loading="lazy"><div class="gallery-overlay"><span>Приборы</span></div></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== НАБОРЫ ===== -->
+    <section class="sets" id="sets">
+        <div class="container">
+            <h2 class="section-title">НАБОРЫ</h2>
+            <p class="section-subtitle">Выберите набор на любой случай — от ужина на двоих до большой компании</p>
+            
+            <div class="gallery-grid sets-grid">
+                <div class="gallery-item gallery-item-large"><img src="img/sets/photo_0000.jpg" alt="Набор" loading="lazy"><div class="gallery-overlay"><span>Набор</span></div></div>
+                <div class="gallery-item"><img src="img/sets/photo_0001.jpg" alt="Набор" loading="lazy"><div class="gallery-overlay"><span>Набор</span></div></div>
+                <div class="gallery-item"><img src="img/sets/photo_0002.jpg" alt="Набор" loading="lazy"><div class="gallery-overlay"><span>Набор</span></div></div>
+                <div class="gallery-item"><img src="img/sets/photo_0003.jpg" alt="Набор" loading="lazy"><div class="gallery-overlay"><span>Набор</span></div></div>
+                <div class="gallery-item"><img src="img/sets/photo_0004.jpg" alt="Набор" loading="lazy"><div class="gallery-overlay"><span>Набор</span></div></div>
+            </div>
+
+            <div class="sets-more" id="setsMore"></div>
+            <button class="btn btn-outline btn-center" id="loadMoreSets">ПОКАЗАТЬ ЕЩЁ НАБОРЫ</button>
+        </div>
+    </section>
+
+    <!-- ===== ОБЪЯВЛЕНИЯ ===== -->
+    <section class="announcements" id="announcements">
+        <div class="container">
+            <h2 class="section-title">НОВОСТИ</h2>
+            <div class="announcements-grid">
+                <div class="announcement-card">
+                    <img src="img/announcements/photo_0012.jpg" alt="Новости" loading="lazy">
+                    <div class="announcement-text">
+                        <h3>🎉 Новое заведение в Приморском районе!</h3>
+                        <p>Фабрика Sushi официально открывает двери в Приморском районе — пр. Авиаконструкторов, д. 63</p>
+                    </div>
+                </div>
+                <div class="announcement-card">
+                    <img src="img/announcements/photo_0006.jpg" alt="Доставка" loading="lazy">
+                    <div class="announcement-text">
+                        <h3>📦 Заказывайте с доставкой!</h3>
+                        <p>Не успеваете приехать? Закажите любимые роллы с доставкой на дом. Ежедневно с 11:15 до 22:45</p>
+                    </div>
+                </div>
+                <div class="announcement-card">
+                    <img src="img/announcements/photo_0060.jpg" alt="Зал открыт" loading="lazy">
+                    <div class="announcement-text">
+                        <h3>🍽 Наш зал открыт!</h3>
+                        <p>Приходите насладиться атмосферой, открытым кухней и свежайшими роллами</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== КОНТАКТЫ ===== -->
+    <section class="contacts" id="contacts">
+        <div class="container">
+            <div class="contacts-content">
+                <h2 class="section-title">КОНТАКТЫ</h2>
+                <div class="contacts-grid">
+                    <div class="contact-card">
+                        <div class="contact-icon">📞</div>
+                        <h3>ТЕЛЕФОН</h3>
+                        <a href="tel:+78123898888" class="contact-value">389-88-88</a>
+                        <p>Ежедневно с 11:15 до 22:45</p>
+                    </div>
+                    <div class="contact-card">
+                        <div class="contact-icon">📍</div>
+                        <h3>МУРИНО</h3>
+                        <p class="contact-value">Воронцовский бульвар, д. 12</p>
+                        <p>ЖК Гринландия</p>
+                    </div>
+                    <div class="contact-card">
+                        <div class="contact-icon">📍</div>
+                        <h3>ПРИМОРСКИЙ РАЙОН</h3>
+                        <p class="contact-value">пр. Авиаконструкторов, д. 63</p>
+                    </div>
+                    <div class="contact-card">
+                        <div class="contact-icon">📸</div>
+                        <h3>СОЦСЕТИ</h3>
+                        <a href="https://vk.com/fabrika_sushi" class="contact-value" target="_blank">VK — Fabrika Sushi</a>
+                        <a href="https://instagram.com/fabrikasushi_" class="contact-value" target="_blank">Instagram</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <img src="img/logo/logo.jpg" alt="Fabrika Sushi" class="footer-logo">
+                    <p class="footer-tagline">Фабрика вкуса. Фабрика качества. Фабрика суши.</p>
+                </div>
+                <div class="footer-links">
+                    <a href="tel:+78123898888">389-88-88</a>
+                    <a href="https://vk.com/fabrika_sushi" target="_blank">ВКонтакте</a>
+                    <a href="https://instagram.com/fabrikasushi_" target="_blank">Instagram</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 FABRIKA SUSHI. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
