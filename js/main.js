@@ -136,8 +136,15 @@ function closeLightbox() {
     }, 400);
 }
 
-lightbox.addEventListener('click', closeLightbox);
-lightboxImg.addEventListener('click', (e) => e.stopPropagation());
+lightbox.addEventListener('click', (e) => {
+    e.stopPropagation();
+    closeLightbox();
+});
+
+lightboxImg.addEventListener('click', (e) => {
+    e.stopPropagation();
+    closeLightbox();
+});
 lightboxClose.addEventListener('click', closeLightbox);
 
 document.querySelectorAll('.promo-card-image img').forEach(img => {
