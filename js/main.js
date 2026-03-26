@@ -127,6 +127,13 @@ function openLightbox(src, alt) {
     lightbox.offsetHeight;
     requestAnimationFrame(() => {
         lightbox.classList.add('active');
+        // Mobile: start cropped in at 2x
+        if (isMobile) {
+            setTimeout(() => {
+                pinchState.scale = 2;
+                updateImgTransform();
+            }, 350);
+        }
     });
     document.body.style.overflow = 'hidden';
 }
@@ -219,9 +226,9 @@ lightboxImg.addEventListener('touchend', (e) => {
     var now = Date.now();
     if (now - lastTap < 300) {
         if (pinchState.scale > 1) {
-            pinchState.scale = 1; pinchState.x = 0; pinchState.y = 0;
+            pinchState.scale = 2; pinchState.x = 0; pinchState.y = 0; // Reset to crop
         } else {
-            pinchState.scale = 3;
+            pinchState.scale = 2;
         }
         updateImgTransform();
     }
