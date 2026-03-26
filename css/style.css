@@ -332,6 +332,10 @@ a {
     text-align: center;
     margin: 0 auto 28px;
     font-family: var(--font-display);
+    transform: scaleY(1.2);
+    -webkit-text-stroke: 1px rgba(10, 10, 10, 0.85);
+    paint-order: stroke fill;
+    box-shadow: 0 0 20px rgba(191, 0, 255, 0.3), 0 0 40px rgba(191, 0, 255, 0.15);
 }
 
 .promo-title {
